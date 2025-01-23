@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learning Management System (LMS)
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is a comprehensive Learning Management System (LMS) designed to provide robust functionality for administrators, students, and trainers. The LMS includes an admin dashboard with features like course management, community interaction, live classes, doubt clearing, and analytics. Future development will add pages for students, trainers, and other LMS-specific functionalities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Current Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Admin Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Dashboard Page**: Overview of key metrics and insights.
+2. **Course Page**: Manage courses, including creation, updates, and deletion.
+3. **Community Page**: Facilitate discussions and engagement among users.
+4. **Chat Page**: Real-time messaging capabilities.
+5. **Live Classes Page**: Organize and manage live class sessions.
+6. **Doubt Classes Page**: Schedule and manage doubt-clearing sessions.
+7. **Analytics Page**: Visualize data and track performance metrics.
 
-## Learn More
+### Upcoming Features
 
-To learn more about Next.js, take a look at the following resources:
+- **All Students Page**: Manage and monitor student data.
+- **Trainers Page**: Manage trainer profiles and activities.
+- Additional LMS functionalities to enhance the user experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- **Frontend**:
+  - [Next.js](https://nextjs.org/): React framework for server-rendered and static web applications.
+  - [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for styling.
+  - [Shadcn UI](https://shadcn.dev/): Pre-built components for streamlined UI development.
+- **Backend**:
+  - [Node.js](https://nodejs.org/): JavaScript runtime for server-side development.
+  - [Express.js](https://expressjs.com/): Web framework for Node.js.
+  - [PostgreSQL](https://www.postgresql.org/): Relational database management system.
+  - [Docker](https://www.docker.com/): Containerization for consistent development and deployment environments.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Installation and Setup
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- Docker
+- PostgreSQL
+
+### Installation Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-repo-name/lms.git
+   cd lms
+   ```
+
+2. Install frontend dependencies:
+
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+3. Install backend dependencies:
+
+   ```bash
+   cd ../backend
+   npm install
+   ```
+
+4. Set up environment variables for both frontend and backend:
+
+   - Frontend: `.env.local`
+   - Backend: `.env`
+
+   Example `.env` file for the backend:
+
+   ```env
+   DATABASE_URL=postgresql://username:password@localhost:5432/lms
+   PORT=5000
+   JWT_SECRET=your_jwt_secret
+   ```
+
+5. Run the application:
+
+   - Start PostgreSQL using Docker:
+     ```bash
+     docker-compose up -d
+     ```
+   - Start the backend server:
+     ```bash
+     cd backend
+     npm run dev
+     ```
+   - Start the frontend application:
+     ```bash
+     cd ../frontend
+     npm run dev
+     ```
+
+6. Open the application in your browser:
+
+   ```
+   http://localhost:3000
+   ```
+
+---
+
+<p align="center">
+  <img src="./designs/adminDashboard.png" alt="Swagger UI" style="width:800px; height:400px;">
+  <img src="./designs/community.png" alt="Swagger UI" style="width:800px; height:400px;">
+  <img src="./designs/chat.png" alt="Swagger UI" style="width:800px; height:400px;">
+  <img src="./designs/adminCourses.png" alt="Swagger UI" style="width:800px; height:400px;">
+  <img src="./designs/adminLiveClassesSchedule.png" alt="Swagger UI" style="width:800px; height:400px;">
+
+</p>
+
+---
+
+
+## Contribution Guidelines
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
